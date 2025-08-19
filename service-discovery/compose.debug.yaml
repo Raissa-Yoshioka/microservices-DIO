@@ -1,0 +1,11 @@
+services:
+  service-discovery:
+    image: service-discovery
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      JAVA_OPTS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005,quiet=y
+    ports:
+      - 8761:8761
+      - 5005:5005
