@@ -22,7 +22,7 @@ USER spring:spring
 COPY --from=productCatalogBuild /build/target/*.jar product-catalog.jar
 
 # Declaração da porta utilizada pela aplicação
-EXPOSE 8761
+EXPOSE 8110
 
 # Definindo uma variável de ambiente para o container
 # SPRING_PROFILES_ACTIVE é uma variável reservada no Spring Framework
