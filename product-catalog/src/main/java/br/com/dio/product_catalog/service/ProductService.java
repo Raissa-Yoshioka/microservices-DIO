@@ -11,7 +11,7 @@ import br.com.dio.product_catalog.repository.ProductRepository;
 @Service
 public class ProductService {
 
-    final ProductRepository productRepository;
+    private ProductRepository productRepository;
 
     public ProductService(ProductRepository productRepository){
         this.productRepository = productRepository;
@@ -48,10 +48,5 @@ public class ProductService {
 
         // Salvar alterações
         return productRepository.save(existingProduct);
-    }
-
-    // Métodos personalizados
-    public List<Product> findProductByName(String name) {
-        return productRepository.findByNameContaining(name);
     }
 }

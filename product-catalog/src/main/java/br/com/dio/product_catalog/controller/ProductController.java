@@ -23,7 +23,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/produtos")
 public class ProductController {
 
-    final ProductService productService;
+    private ProductService productService;
 
     public ProductController(ProductService productService){
         this.productService = productService;
@@ -50,15 +50,6 @@ public class ProductController {
     public ResponseEntity<Product> findProductByID(@PathVariable Long id) {
         Product targetProduct = productService.findProductByID(id);
         return ResponseEntity.ok(targetProduct);
-    }
-
-    @GetMapping("/{name}")
-    public ResponseEntity<List<Product>> findProductsByName(@PathVariable String name) {
-        List<Product> products = productService.findProductByName(name);
-        if (products.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(products);
     }
 
     @PutMapping("/{id}")

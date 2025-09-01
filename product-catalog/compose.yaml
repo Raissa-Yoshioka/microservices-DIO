@@ -1,0 +1,8 @@
+services:
+  product-catalog:
+    image: product-catalog
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8110:8110
