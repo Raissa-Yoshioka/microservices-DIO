@@ -13,7 +13,6 @@ import br.com.dio.order_simulation.ProductClient.ProductFeignClient;
 import br.com.dio.order_simulation.dto.OrderProductDTO;
 import br.com.dio.order_simulation.dto.OrderSimulationDTO;
 import br.com.dio.order_simulation.dto.ProductDTO;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/pedidos")
@@ -25,7 +24,7 @@ public class OrderController {
         this.productClient = productClient;
     }
 
-    @PostMapping("/simulation")
+    @PostMapping("/simulando")
     public ResponseEntity<OrderSimulationDTO> orderSimulation(@RequestBody List<Long> productsID) {
         List<OrderProductDTO> listItems = new ArrayList<>();
         double total = 0;
@@ -36,7 +35,7 @@ public class OrderController {
                 return ResponseEntity.noContent().build();
             }
 
-            OrderProductDTO product = new OrderProductDTO(productTarget.id(), 1, productTarget.price());
+            OrderProductDTO product = new OrderProductDTO(productTarget.id(), 1);
             listItems.add(product);
             total += productTarget.price();
         }
@@ -44,12 +43,5 @@ public class OrderController {
         OrderSimulationDTO order = new OrderSimulationDTO(listItems, total);
         return ResponseEntity.ok(order);
     }
-
-    @GetMapping("/lista")
-    public ResponseEntity<List<ProductDTO>> getProducts() {
-        List<ProductDTO> products = productClient.listProducts();
-        return ResponseEntity.ok(products);
-    }
-    
     
 }

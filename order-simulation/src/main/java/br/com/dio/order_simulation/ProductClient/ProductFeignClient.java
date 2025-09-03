@@ -1,7 +1,5 @@
 package br.com.dio.order_simulation.ProductClient;
 
-import java.util.List;
-
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +11,4 @@ public interface ProductFeignClient {
 
     @GetMapping("/produtos/{id}")
     ProductDTO getById(@PathVariable("id") Long id);
-
-    @GetMapping("/produtos")
-    List<ProductDTO> listProducts();
 }
