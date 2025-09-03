@@ -22,7 +22,7 @@ USER spring:spring
 COPY --from=orderSimulationBuild /build/target/*.jar order-simulation.jar
 
 # Declaração da porta utilizada pela aplicação
-EXPOSE 8228
+EXPOSE 8218
 
 # Definindo uma variável de ambiente para o container
 # SPRING_PROFILES_ACTIVE é uma variável reservada no Spring Framework

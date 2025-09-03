@@ -1,0 +1,49 @@
+services:
+    service-discovery:
+        build: ./service-discovery
+        container_name: service-discovery
+        ports:
+            - 8761:8761
+        networks:
+            - desafio-nttdatadio-microservices
+    
+    product-catalog:
+        build: ./product-catalog 
+        container_name: product-catalog
+        ports:
+            - 8110:8110
+        networks:
+            - desafio-nttdatadio-microservices
+        environment:
+            - eureka.client.serviceUrl.defaultZone=http://service-discovery:8761/eureka/
+        depends_on:
+            - service-discovery
+    
+    order-simulation:
+        build: ./order-simulation
+        container_name: order-simulation
+        ports:
+            - 8218:8218
+        networks:
+            - desafio-nttdatadio-microservices
+        environment:
+            - eureka.client.serviceUrl.defaultZone=http://service-discovery:8761/eureka/
+        depends_on:
+            - service-discovery
+    
+    api-gateway:
+        build: ./api-gateway
+        container_name: api-gateway
+        ports:
+            - 8730:8730
+        networks:
+            - desafio-nttdatadio-microservices
+        environment:
+            - eureka.client.serviceUrl.defaultZone=http://service-discovery:8761/eureka/
+        depends_on:
+            - service-discovery
+            - product-catalog
+            - order-simulation
+
+networks:
+    desafio-nttdatadio-microservices:
