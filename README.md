@@ -52,4 +52,31 @@ O projeto é separado em módulos, descritos abaixo:
 - Product Catalog: 8110
 - Order Simulation: 8218
 
+## Execução do Projeto
 
+Certifique-se de estar no diretório raiz do projeto `microservices-DIO` e execute:
+
+```sh
+	docker-compose up -d
+```
+
+Aguarde alguns minutos para os serviços serem registrados no servidor do _Eureka_ acessível em `http://localhost:8761` e os serviços `api-gateway`, `product-catalog` e `order-simulation` devem estar com o status `UP`.
+
+E pronto! Você pode testar os endpoints com os seguintes métodos:
+
+- Sobre o microsserviços `product-catalog`:
+
+| Método| Endpoint			| Descrição					|
+| ----- | -----------------	| ------------------------- |
+| POST	| `/produtos`		| Cadastra um novo produto					|
+| GET	| `/produtos`		| Retorna uma lista com todos os produtos cadastrados	|
+| GET	| `/produtos/{id}`	| Retorna todos os detalhes do produto com o id		|
+| PUT	| `/produtos/{id}`	| Atualiza as informações do produto cadastrado com o id	|
+| DELETE| `/produtos/{id}`	| Remove um produto do sistema			|
+
+- Sobre o microsserviços `order-simulation`:
+
+| Método| Endpoint			| Descrição					|
+| ----- | -----------------	| ------------------------- |
+| POST	| `/pedidos/criar`	| Cadastra um novo pedido		|
+| GET	| `/pedidos`	| Lista todos os pedidos cadastrados	|
