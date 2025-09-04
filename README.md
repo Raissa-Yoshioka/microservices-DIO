@@ -42,19 +42,21 @@ O projeto é separado em módulos, descritos abaixo:
 
 - Microsserviço 2: `order-simulation`
 
-	* Realiza a simulação da criação de um pedido com base em uma lista dos IDs dos produtos
+	* Realiza a simulação da criação de um pedido com base em uma lista dos IDs dos produtos.
 	* Endpoint: `/pedidos`
 
 ## Portas de Acesso
 
-- Service Discovery: 8761
-- API Gateway: 8730
-- Product Catalog: 8110
-- Order Simulation: 8218
+- Service Discovery: `8761`
+- API Gateway: `8730`
+- Product Catalog: `8110`
+- Order Simulation: `8218`
+
+---
 
 ## Execução do Projeto
 
-Certifique-se de estar no diretório raiz do projeto `microservices-DIO` e execute:
+Certifique-se de ter o Java e Docker instalados na sua máquina, abra a pasta na sua IDE de preferência e abra o terminal no diretório raiz do projeto (`microservices-DIO`). Execute o seguinte comando que irá construir as imagens determinadas no arquivo `docker-compose.yml`:
 
 ```sh
 	docker-compose up -d
