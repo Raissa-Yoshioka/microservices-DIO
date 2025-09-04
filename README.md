@@ -2,9 +2,9 @@
 ## Desafio de Projeto final do bootcamp NTT DATA da DIO
 
 ![Java](https://img.shields.io/badge/Java-21-royalblue?style=for-the-badge&logo=openjdk)
-!Maven(https://img.shields.io/badge/Maven-darkred?style=for-the-badge&logo=apachemaven)
-!Spring Boot(https://img.shields.io/badge/Spring Boot-v3.5-darkgreen?style=for-the-badge&logo=spring)
-![Docker](https://img.shields.io/badge/Docker-blue?style=for-the-badge&logo=docker)
+![Maven](https://img.shields.io/badge/Maven-darkred?style=for-the-badge&logo=apachemaven)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-v3.5-darkgreen?style=for-the-badge&logo=spring)
+![Docker](https://img.shields.io/badge/Docker-lightblue?style=for-the-badge&logo=docker)
 
 Este projeto é uma aplicação baseada na arquitetura de microsserviços utilizando a linguagem Java com Spring Boot e Spring Cloud, simulando um sistema básico para catálogo de produtos e simulação de pedidos.
 
