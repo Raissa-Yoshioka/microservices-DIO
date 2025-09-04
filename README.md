@@ -36,10 +36,12 @@ O projeto é separado em módulos, descritos abaixo:
 ## Contexto dos Microsserviços
 
 - Microsserviço 1: `product-catalog`
-	*Realiza o catálogo de produtos, onde se cadastra, lista, consulta, atualiza e deleta produtos.
+
+  	*Realiza o catálogo de produtos, onde se cadastra, lista, consulta, atualiza e deleta produtos.
 	* Endpoint: `/produtos`
 
 - Microsserviço 2: `order-simulation`
+
 	* Realiza a simulação da criação de um pedido com base em uma lista dos IDs dos produtos
 	* Endpoint: `/pedidos`
 
