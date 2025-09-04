@@ -14,8 +14,8 @@ Este projeto é uma aplicação baseada na arquitetura de microsserviços utiliz
 
 O projeto é separado em módulos, descritos abaixo:
 
-- `API Gateway`, responsável pelo roteamento centralizado das requisições;
-- `Discovery Service`, responsável pelo serviço de descoberta dos microserviços registrados utilizando _Eureka_;
+- `API Gateway`, responsável pelo roteamento das requisições;
+- `Discovery Service`, responsável pelo serviço de descoberta dos microsserviços registrados utilizando _Eureka_;
 - `Product Catalog`, microsserviço responsável por gerenciar os produtos;
 - `Order Simulation`, microsserviço responsável pela simulação dos pedidos.
 
