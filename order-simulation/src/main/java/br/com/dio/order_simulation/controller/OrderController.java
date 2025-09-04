@@ -28,7 +28,7 @@ public class OrderController {
         this.orderRepository = orderRepository;
     }
 
-    @PostMapping("/simulando")
+    @PostMapping("/criar")
     public ResponseEntity<Order> orderSimulation(@RequestBody List<Long> productsID) {
         List<OrderProductDTO> listItems = new ArrayList<>();
         double total = 0;
